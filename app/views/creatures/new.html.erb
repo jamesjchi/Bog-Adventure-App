@@ -1,14 +1,16 @@
 <h1>New Creature</h1>
 
-<%= bootstrap_form_for @creature do |t| %>
-  <div>
-    
-    <%= t.text_field :name %>
-  </div>
+<div class="container">
+  <%= bootstrap_form_for @creature do |t| %>
+    <div>
+      
+      <%= t.text_field :name %>
+    </div>
 
-  <div>
-        <%= t.text_area :description %>
-  </div>
+    <div>
+          <%= t.text_area :description %>
+    </div>
 
-  <%= t.submit %>
-<% end %>
+    <%= t.submit %>
+  <% end %>
+</div>

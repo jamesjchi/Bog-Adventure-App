@@ -1,25 +1,28 @@
 <h1>Update Creature</h1>
 
-<%= link_to "All Creatures", creatures_path %>
+<div class= "container">
+  <%= link_to "All Creatures", creatures_path %>
 
-<% if @creature %>
-  <h3><%= @creature.name %></h3>
-  <p><%= @creature.description %></p>
-<% else %>
-  <h1>No Creatures!</h1>
-<% end %>
+  <% if @creature %>
+    <h3><%= @creature.name %></h3>
+    <h3><%= @creature.description %></h3>
+  <% else %>
+    <h1>No Creatures!</h1>
+  <% end %>
 
-<%= bootstrap_form_for @creature do |t| %>
-  <div>
-  <%= t.text_field :name %>
-  </div>
+  <%= bootstrap_form_for @creature do |t| %>
+    <div>
+    <%= t.text_field :name %>
+    </div>
 
-  <div>
-  <%= t.text_area :description %>
-  </div>
+    <div>
+    <%= t.text_area :description %>
+    </div>
 
-  <%= t.submit %>
-<% end %>
+    <%= t.submit :data => {:confirm => 'Are you sure?'} %>
+  <% end %>
+  
+  <%= link_to "Delete", @creature, :data => {:confirm => 'Are you sure?'}, :method => :delete %>
 
-<%= link_to "Delete", @creature, :data => {:confirm => 'Are you sure?'}, :method => :delete %>
+</div>
 
