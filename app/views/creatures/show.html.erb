@@ -9,14 +9,12 @@
   <h1>No Creatures!</h1>
 <% end %>
 
-<%= form_for @creature do |t| %>
+<%= bootstrap_form_for @creature do |t| %>
   <div>
-  <%= t.label :name %>
   <%= t.text_field :name %>
   </div>
 
   <div>
-  <%= t.label :description %>
   <%= t.text_area :description %>
   </div>
 
