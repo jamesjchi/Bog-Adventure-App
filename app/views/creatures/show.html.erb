@@ -1,0 +1,27 @@
+<h1>Update Creature</h1>
+
+<%= link_to "All Creatures", creatures_path %>
+
+<% if @creature %>
+  <h3><%= @creature.name %></h3>
+  <p><%= @creature.description %></p>
+<% else %>
+  <h1>No Creatures!</h1>
+<% end %>
+
+<%= form_for @creature do |t| %>
+  <div>
+  <%= t.label :name %>
+  <%= t.text_field :name %>
+  </div>
+
+  <div>
+  <%= t.label :description %>
+  <%= t.text_area :description %>
+  </div>
+
+  <%= t.submit %>
+<% end %>
+
+<%= link_to "Delete", @creature, :method => :delete %>
+

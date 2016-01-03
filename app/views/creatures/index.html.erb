@@ -1,0 +1,10 @@
+<h1>Creatures Index</h1>
+
+<% @creatures.each do |creature| %>
+  <div>
+    <%= link_to "Edit Creature", creature_path(creature) %>
+    <p><%= creature.name %></p>
+    <p><%= creature.description %></p>
+  </div>
+<% end %>
+
