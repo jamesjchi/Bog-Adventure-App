@@ -23,5 +23,5 @@
   <%= t.submit %>
 <% end %>
 
-<%= link_to "Delete", @creature, :method => :delete %>
+<%= link_to "Delete", @creature, :data => {:confirm => 'Are you sure?'}, :method => :delete %>
 
